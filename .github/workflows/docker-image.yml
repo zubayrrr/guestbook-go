@@ -1,10 +1,9 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
-    branches: ["main"]
+    types:
+      - closed
 jobs:
   build-n-push:
     runs-on: ubuntu-latest
