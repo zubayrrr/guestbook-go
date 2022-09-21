@@ -2,13 +2,12 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches:
-      - main
-    types: [closed]
+    types:
+      - closed
 
 jobs:
   build-n-push:
-    if: ${{ github.event.pull_request.merged }}
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Login to Docker Hub
