@@ -29,6 +29,8 @@ Don't forget to create the secrets `DOCKER_USER` & `DOCKER_TOKEN` from: Settings
 
 ![image](https://user-images.githubusercontent.com/31969517/191467178-f8a1518a-ee81-430d-99cd-7ac9a90fccef.png)
 
+Docker Hub Token can be created from [Account Settings/Security](https://hub.docker.com/settings/security)
+
 ## Phase II
 
 **Deploy container image built in above step(Phase I) on local/any kubernetes cluster.**
