@@ -2,3 +2,4 @@ build test
 testing commit message
 test
 test again
+testing merge
