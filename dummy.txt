@@ -1,8 +1,0 @@
-build test
-testing commit message
-test
-test again
-testing merge
-another commit wihtout message
-build on merge
-build on merge pleaese
