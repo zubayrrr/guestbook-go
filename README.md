@@ -76,13 +76,15 @@ You'll get "Rule is invalid" if your protection rule name is invalid. See [About
 name: Docker Image CI
 
 on:
-  pull_request_review:
+  push:
+    branches: ["main"]
+  pull_request:
     types:
-      - submitted
-
+      - closed
 jobs:
-  build:
+  build-n-push:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true || contains(github.event.head_commit.message, 'BUILD_CONTAINER_IMAGE')
     steps:
       - name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -91,7 +93,6 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - uses: actions/checkout@v3
       - name: Docker Build
-        if: contains(github.event.head_commit.message, 'BUILD_CONTAINER_IMAGE')
         run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/guestbook-go:latest
       - name: Docker Push
         run: docker push ${{secrets.DOCKER_USER}}/guestbook-go
