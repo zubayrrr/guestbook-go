@@ -19,4 +19,4 @@ jobs:
       - name: Docker Build
         run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/guestbook-go:latest
       - name: Docker Push
-        run: docker push ${{secrets.DOCKER_USER}}/guestbook-go:latest
+        run: docker push ${{secrets.DOCKER_USER}}/guestbook-go
