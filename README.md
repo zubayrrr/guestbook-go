@@ -25,7 +25,9 @@ jobs:
         run: docker push ${{secrets.DOCKER_USER}}/guestbook-go
 ```
 
-Don't forget to create the secrets `DOCKER_USER` & `DOCKER_TOKEN`.
+Don't forget to create the secrets `DOCKER_USER` & `DOCKER_TOKEN` from: Settings -> Security -> Secrets -> Actions -> New repository secret.
+
+![image](https://user-images.githubusercontent.com/31969517/191467178-f8a1518a-ee81-430d-99cd-7ac9a90fccef.png)
 
 ## Phase II
 
